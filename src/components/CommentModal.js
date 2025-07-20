@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 import UserContext from '../context/UserContext';
-import DeleteComment from './DeleteComment'; // Import the DeleteComment component
+import DeleteComment from './DeleteComment'; 
 
 export default function CommentModal({ show, handleClose, blogPost }) {
   const { user } = useContext(UserContext);
@@ -121,10 +121,10 @@ export default function CommentModal({ show, handleClose, blogPost }) {
     );
   };
 
-  // Check if user is admin or owns the comment
+  // Check if user is admin 
   const canDeleteComment = (comment) => {
-    return user && (user.isAdmin || user.id === comment.userId);
-  };
+  return user && user.isAdmin; // Only admins can see delete buttons
+};
 
   return (
     <Modal show={show} onHide={handleClose} centered size="lg">
