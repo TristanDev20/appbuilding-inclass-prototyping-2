@@ -29,6 +29,7 @@ const DeleteComment = ({
       
       const response = await fetch(`https://appbuilding-inclass-prototyping-1.onrender.com/blogposts/deleteComment/${commentId}`, {
         method: 'DELETE',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`

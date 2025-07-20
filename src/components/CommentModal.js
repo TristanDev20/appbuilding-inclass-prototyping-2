@@ -19,6 +19,7 @@ export default function CommentModal({ show, handleClose, blogPost }) {
       
       fetch(`https://appbuilding-inclass-prototyping-1.onrender.com/blogposts/getAllComments/${blogPost._id}`, {
         method: 'GET',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`
@@ -69,6 +70,7 @@ export default function CommentModal({ show, handleClose, blogPost }) {
     
     fetch(`https://appbuilding-inclass-prototyping-1.onrender.com/blogposts/addComment/${blogPost._id}`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${localStorage.getItem('token')}`,

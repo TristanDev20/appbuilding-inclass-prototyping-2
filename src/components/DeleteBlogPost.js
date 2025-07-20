@@ -24,6 +24,7 @@ export default function DeleteBlogPost({ post, onDeleted }) {
       if (result.isConfirmed) {
         fetch(`https://appbuilding-inclass-prototyping-1.onrender.com/blogposts/DeleteBlogPost/${post._id}`, {
           method: 'DELETE',
+          credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${localStorage.getItem('token')}`

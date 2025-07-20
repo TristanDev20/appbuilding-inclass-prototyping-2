@@ -107,6 +107,7 @@ export default function UpdateBlogPost({ blogPost, onPostUpdated }) {
     try {
       const response = await fetch(`https://appbuilding-inclass-prototyping-1.onrender.com/blogposts/updateBlogPost/${blogPost._id || blogPost.id}`, {
         method: 'PATCH',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem('token')}`
