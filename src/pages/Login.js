@@ -20,6 +20,7 @@ export default function Login() {
       headers: {
         "Content-Type": "application/json"
       },
+      credentials: 'include',
       body: JSON.stringify({ email, password })
     })
       .then(res => res.json())
@@ -49,7 +50,8 @@ export default function Login() {
     fetch('https://appbuilding-inclass-prototyping-1.onrender.com/users/details', {
       headers: {
         Authorization: `Bearer ${token}`
-      }
+      },
+      credentials: 'include'
     })
       .then(res => res.json())
       .then(data => {

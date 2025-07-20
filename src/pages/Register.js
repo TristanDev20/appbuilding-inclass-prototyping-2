@@ -22,6 +22,7 @@ export default function Register() {
 		
 		fetch('https://appbuilding-inclass-prototyping-1.onrender.com/users/register',{
 			method: 'POST',
+			credentials: 'include',
 			headers: {
 				"Content-Type": "application/json"
 			},

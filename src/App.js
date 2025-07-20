@@ -31,7 +31,8 @@ function App() {
       fetch(`http://localhost:4000/users/details`, {
         headers: {
           Authorization: `Bearer ${token}`
-        }
+        },
+        credentials: 'include'
       })
       .then(res => res.json())
       .then(data => {

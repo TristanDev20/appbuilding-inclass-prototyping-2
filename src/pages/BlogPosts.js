@@ -33,7 +33,8 @@ export default function BlogPosts() {
 		fetch('https://appbuilding-inclass-prototyping-1.onrender.com/blogposts/getAllBlogPost', {
 			headers: {
 				Authorization: `Bearer ${localStorage.getItem('token')}`
-			}
+			},
+			credentials: 'include'
 		})
 			.then((res) => {
 				if (!res.ok) {
